@@ -6,4 +6,28 @@
 
 {% block content %}
 <h1>Главная страница</h1>
+<div class="auth-container">
+    <h1>Загрузка файлов</h1>
+    <div class="profile-card">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div>
+                <label>Файл с данными:</label>
+                <input type="file" name="data_file">
+
+                <label>Файл с классами:</label>
+                <input type="file" name="classes_file">
+
+                <button type="submit" class="auth-btn"">Загрузить и обработать</button>
+            </div>
+        </form>
+
+        {% if accuracy and loss %}
+        <div>
+            <h3 style=>Результаты:</h3>
+            <p class="profile-info"><strong>Точность (Accuracy):</strong> <span>{{ accuracy }}%</span></p>
+            <p class="profile-info"><strong>Потери (Loss):</strong> <span>{{ loss }}</span></p>
+        </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
