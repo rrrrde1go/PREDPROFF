@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
-
-{% block title %}
-Регистрация
-{% endblock %}
-
+{% block title %}Регистрация{% endblock %}
 {% block content %}
-<h1>Регистрация</h1>
+<link rel="stylesheet" href="../static/style.css">
+<div class="auth-container">
+    <h1>Регистрация</h1>
+    <form method="POST" action="/register" class="auth-form">
+        <input type="text" name="first_name" placeholder="Имя" required class="auth-input">
+        <input type="text" name="last_name" placeholder="Фамилия" required class="auth-input">
+        <input type="text" name="username" placeholder="Логин" required class="auth-input">
+        <input type="password" name="password" placeholder="Пароль" required class="auth-input">
+        <button type="submit" class="auth-btn-register">Зарегистрироваться</button>
+    </form>
+    <p class="auth-link-container"><a href="/login" class="auth-link">Вход</a></p>
+</div>
 {% endblock %}

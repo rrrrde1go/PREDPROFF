@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
-
-{% block title %}
-Вход
-{% endblock %}
-
+{% block title %}Вход{% endblock %}
 {% block content %}
-<h1>Введите логин</h1>
+<link rel="stylesheet" href="../static/style.css">
+<div class="auth-container">
+    <h1>Вход</h1>
+    <form method="POST" action="/login" class="auth-form">
+        <input type="text" name="username" placeholder="Логин" required class="auth-input">
+        <input type="password" name="password" placeholder="Пароль" required class="auth-input">
+        <button type="submit" class="auth-btn">Войти</button>
+    </form>
+    <p class="auth-link-container"><a href="/register" class="auth-link">Регистрация</a></p>
+</div>
 {% endblock %}
