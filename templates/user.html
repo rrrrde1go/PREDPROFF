@@ -3,7 +3,18 @@
 {% block title %}
 Информация о пользователе
 {% endblock %}
+<link rel="stylesheet" href="../static/style.css">
 
 {% block content %}
 <h1>Информация о пользователе</h1>
+<div class="auth-container">
+    <div>
+        <p><strong>Логин:</strong> {{ username }}</p>
+        <p><strong>Имя:</strong> {{ first_name }}</p>
+        <p><strong>Фамилия:</strong> {{ last_name }}</p>
+        <form method="POST" action="/logout">
+            <button type="submit" class="auth-bin">Выйти</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -5,7 +5,7 @@ from datetime import timedelta
 
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
-app.permanent_session_lifetime = timedelta(seconds=1)
+app.permanent_session_lifetime = timedelta(hours=1)
 
 
 @app.route('/')
