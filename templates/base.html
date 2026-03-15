@@ -18,9 +18,9 @@
             </svg>
         </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Домашняя страница</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Графики и диаграммы</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Профиль</a></li>
+                <li><a href="{{ url_for('index') }}" class="nav-link px-2 text-secondary">Домашняя страница</a></li>
+                <li><a href="{{ url_for('graph') }}" class="nav-link px-2 text-white">Графики и диаграммы</a></li>
+                <li><a href="{{ url_for('user') }}" class="nav-link px-2 text-white">Профиль</a></li>
             </ul>
             <div class="text-end">
                 <button type="button" class="btn btn-outline-light me-2">Войти</button>
