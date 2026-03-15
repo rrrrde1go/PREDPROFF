@@ -35,7 +35,7 @@ def register():
 def user():
     if 'username' in session:
         user = session['username']
-        return f'<h1>{user}</h1>'
+        return render_template('user.html', user=user)
     else:
         return redirect(url_for('login'))
 
