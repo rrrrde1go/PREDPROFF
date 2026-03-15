@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from constants import SECRET_KEY
 from datetime import timedelta
 
-
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
-app.permanent_session_lifetime = timedelta(hours=1)
+app.permanent_session_lifetime = timedelta(seconds=1)
+
 
 @app.route('/')
 @app.route('/index')
@@ -26,6 +26,7 @@ def login():
             return redirect(url_for('user'))
     return render_template('login.html')
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     return render_template('register.html')
@@ -43,6 +44,12 @@ def user():
 @app.route('/graph')
 def graph():
     return render_template('graph.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 
 if __name__ == "__main__":
